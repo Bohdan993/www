@@ -1,0 +1,48 @@
+@import './Products'
+@import './Portfolio'
+@import './Team'
+@import './Blog'
+
+.slick-slider
+  width: calc(100% + 8.53vh)
+  height: 100%
+  overflow: hidden
+  .slick-track
+    display: flex
+    .slick-slide
+      height: 46.9rem
+      margin-right: 3.2rem
+      overflow: hidden
+      > div  
+        height: 100%
+
+.slider-container
+  position: relative
+  height: 100%
+  input
+    &[type="range"]
+      position: absolute
+      bottom: 10px
+      -webkit-appearance: none
+      margin-right: 15px
+      width: calc(100% - 8.53vh)
+      height: 2px
+      background-color: rgba(255, 255, 255, 0.6)
+      border-radius: 5px
+      background-size: 70% 100%
+      background-repeat: no-repeat
+      &::-webkit-slider-thumb
+        -webkit-appearance: none
+        height: 2.4rem
+        width: 3.4rem
+        background-color: #10151D
+        border: 2px solid #FFFFFF
+        border-radius: 7.95rem
+        cursor: ew-resize
+        box-shadow: 0 0 2px 0 #555
+        transition: background .3s ease-in-out
+    &[type=range]::-webkit-slider-runnable-track
+      -webkit-appearance: none
+      box-shadow: none
+      border: none
+      background: transparent

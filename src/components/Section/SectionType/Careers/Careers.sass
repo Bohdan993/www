@@ -1,0 +1,87 @@
+@import '../../../../styles/_variables'
+
+.careers
+  overflow-y: auto
+  display: flex
+  gap: 8.8vw
+  &__info-box
+    width: 50%
+    display: flex
+    flex-direction: column
+    align-self: flex-start
+    gap: 2.2vw
+    background: #10151D
+    border-radius: 2rem
+    padding: 2.4vw 3.3vw
+  &__hiring
+    overflow-y: auto
+    width: 50%
+  &__application,
+  &__subtitle
+    font-size: 1.6rem
+    font-weight: 400
+    line-height: 124%
+    color: $light-color-lighter
+    &--grey
+      color: rgba($light-color-lighter, 0.64)
+  &__email,
+  &__title
+    font-size: 3.2rem
+    font-weight: 600
+    line-height: 120%
+    letter-spacing: 0.02em
+    text-decoration: none
+    color: $accent-color
+  &__title
+    margin-bottom: 1.7vw  
+  &__item::before
+    display: block
+    content: ""
+    height: 1px
+    background: rgba($light-color-lighter, 0.24)
+    border-radius: 0.8rem 
+  &__item:not(.careers__item_show) .careers__hidden-block
+    display: none
+  &__item:not(.careers__item_show) .careers__icon
+    background-image: url("/careers/plus.svg") 
+  &__header
+    display: flex
+    justify-content: space-between
+    padding: 1.7vw 0 
+    cursor: pointer
+  &__status
+    display: flex
+    flex-direction: column 
+    gap: 0.4rem     
+  &__position
+    font-size: 1.8rem
+    font-weight: 600
+    line-height: 2.5rem
+    color: $light-color-lighter
+  &__icon
+    width: 3.2rem
+    height: 3.2rem
+    background-image: url("/careers/minus.svg")
+    align-self: center
+  &__tag-box
+    display: flex
+    flex-wrap: wrap
+    gap: 0.4rem
+  &__tags 
+    font-size: 1.2rem
+    font-weight: 400
+    line-height: 120%
+    padding: 0.4rem 0.8rem
+    color: $light-color-max
+    background: rgba(255, 255, 255, 0.102)
+    border-radius: 2.4rem 
+  &__description
+    font-size: 1.4rem
+    font-weight: 400
+    line-height: 150%
+    color: rgba($light-color-lighter, 0.64 )
+    white-space: pre-wrap
+    margin: 1.7vw 0
+::-webkit-scrollbar
+  display: none
+

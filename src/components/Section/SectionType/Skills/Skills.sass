@@ -1,0 +1,78 @@
+@import '../../../../styles/_variables'
+  
+.skills
+  height: 100%
+  display: flex
+  flex-direction: column
+  justify-content: center
+  pointer-events: none
+  &:hover .skills__item
+    opacity: 0.32
+    filter: blur(1.5px)
+  &:hover .skills__item:hover
+    opacity: 1
+    filter: blur(0)
+    z-index: 1
+  &__set
+    display: flex
+    justify-content: center
+    gap: 6.6vw
+    &--1,
+    &--2,
+    &--3
+      margin-top: -1.1vw
+  &__item
+    list-style: none
+    position: relative
+    transition: all 0.4s
+  &__box
+    pointer-events: auto
+    padding: 2vw
+    background: #10151D
+    border-radius: 2.1vw
+    border: 0.5rem solid transparent
+    cursor: pointer
+    display: flex
+    justify-content: center
+    align-items: center
+    transform: rotate(-45deg)
+    transition: all 0.1s
+    &:hover ~ .skills__text
+      display: block
+    &--hidden
+      visibility: hidden  
+  @for $i from 1 through length($skill-outline-colors)
+    .skills__box--#{$i}:hover
+      border: 0.5rem solid nth($skill-outline-colors, $i)
+  @for $i from 1 through length($skill-shadow-colors)
+    .skills__box--#{$i}:hover
+      box-shadow: 0 0 5.6rem -1.1rem nth($skill-shadow-colors, $i)
+  &__img
+    width: 4.4vw
+    height: 4.4vw
+    transform: rotate(45deg)
+  &__text
+    width: 21.8vw
+    color: $light-color
+    z-index: 2
+    display: none
+    position: absolute
+    &--right
+      top: 50%
+      left: 1.25vw
+      transform: translate(50%, -50%)
+    &--left
+      top: 50%
+      right: 1.25vw
+      transform: translate(-50%, -50%)
+  &__title
+    font-size: 3.2rem
+    font-weight: 600
+    line-height: 120%
+    letter-spacing: 0.02em
+    text-transform: uppercase
+    margin-bottom: 0.5vw 
+  &__description
+    font-size: 1.6rem
+    font-weight: 400
+    line-height: 124%

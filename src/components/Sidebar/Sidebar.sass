@@ -1,0 +1,86 @@
+@import '../../styles/_variables'
+
+.sidebar
+  width: $sidebar-width
+  position: fixed
+  padding-top: 5.06vh
+  padding-right: 2rem
+  display: flex
+  flex-direction: column
+  align-items: center
+  height: 100vh
+  z-index: 1
+  &__logo-box
+    margin-bottom: 12vh  
+    @media (max-height: 700px)
+      margin-bottom: 8vh
+  &__logo
+    height: 4.4rem
+    width: 4.4rem
+
+.side-nav
+  display: flex
+  flex-direction: column
+  gap: 2rem
+  &__item
+    list-style: none
+    text-align: center
+    &:last-child
+      position: absolute
+      bottom: 8vh
+    &.active
+      background-color: rgba($accent-color, 0.32)
+      border-radius: 0.8rem
+      .side-nav__link
+        fill: rgba($accent-color, 1)
+        stroke: rgba($accent-color, 1)
+      .side-nav__link:hover::after
+        display: none
+  &__link
+    position: relative
+    display: flex
+    justify-content: center
+    align-items: center
+    &:link,
+    &:visited
+      padding: 0.6rem
+      text-decoration: none
+      fill: rgba($light-color, 0.48)
+      stroke: rgba($light-color, 0.48)
+      cursor: pointer
+    &:hover
+      fill: rgba($accent-color, 0.48)
+      stroke: rgba($accent-color, 0.48)
+      &::after  
+        font-size: 1.2rem
+        font-family: $base-font
+        font-weight: 500
+        line-height: 1
+        white-space: nowrap
+        color: $accent-color
+        padding: 0.6rem 1rem 0.6rem
+        background-color: #161616
+        border-radius: 2.4rem
+        position: absolute
+        left: 4.8rem
+    &--1:hover::after
+      content: "Our Products"
+    &--2:hover::after
+      content: "Statistic"
+    &--3:hover::after
+      content: "Portfolio"
+    &--4:hover::after
+      content: "Skills"
+    &--5:hover::after
+      content: "Feedback"
+    &--6:hover::after
+      content: "Team"
+    &--7:hover::after
+      content: "Blog"
+    &--8:hover::after
+      content: "Careers"
+    &--9:hover::after
+      content: "Contact Us"
+    &__icon
+      height: 2rem
+      width: 2rem

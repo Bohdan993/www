@@ -1,0 +1,43 @@
+@import '../../../../styles/_variables'
+
+.feedback
+  width: 100% 
+  -moz-column-width: 35rem
+  column-width: 35rem
+  column-gap: 4.1rem
+  @media (min-width: 1318px)
+    -moz-column-width: 50rem
+    column-width: 50rem
+    margin-top: -2.1rem
+  &__block
+    display: inline-block
+    width: 100%
+    background: #10151D
+    border-radius: 2rem
+    padding: 2.1rem 3.2rem
+    white-space: pre-wrap
+    margin-top: 2.1rem
+  &__name
+    font-size: 1.8rem
+    font-weight: 600
+    font-style: normal
+    line-height: 2.5rem
+    color: $light-color
+  &__role-box
+    font-size: 1.8rem
+    font-weight: 400
+    font-style: normal
+    line-height: 124%
+    color: $accent-color-dark
+    display: flex
+    gap: 1.2rem
+    margin: 1.2rem 0
+  &__separation
+    color: $light-color
+  &__description
+    font-size: 1.6rem
+    font-weight: 400
+    font-style: normal
+    line-height: 124%
+    color: rgba($light-color, 0.64)
+

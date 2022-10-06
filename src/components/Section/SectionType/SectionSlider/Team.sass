@@ -1,0 +1,55 @@
+@import '../../../../styles/_variables'
+
+.team
+  position: relative
+  height: 100%
+  border-radius: 2rem 
+  background-color: rgba(17, 17, 17, 0.56)
+  background-image: url("/background-gold.png")
+  &__content
+    position: absolute
+    top: 0
+    z-index: 1
+    width: 100%
+    display: flex
+    flex-direction: column
+    gap: 2.8rem
+    padding: 2rem 1.6rem 0
+  &__tag-box
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+  &__position
+    font-size: 1.2rem
+    font-weight: 500
+    line-height: 1.6rem
+    color: $accent-color-dark
+    padding: 0.4rem 0.8rem
+    background: rgba(246, 246, 246, 0.16)
+    border-radius: 0.4rem
+  &__flag-box
+    display: flex
+    gap: 1.2rem
+  &__flag-icon
+    width: 3.2rem
+  &__name-box
+    font-weight: 600
+    color: $light-color
+  &__first-name
+    font-size: 1.8rem
+    line-height: 2.5rem
+  &__second-name
+    font-size: 3.2rem
+    line-height: 120%
+    letter-spacing: 0.02em
+  &__img-box
+    width: 100%
+    position: absolute
+    bottom: 0
+  &__img
+    width: auto
+    margin: 0 auto
+
+
+
+    
