@@ -9,9 +9,14 @@ import Careers from "../Section/SectionType/Careers/Careers";
 import ContactUs from "../Section/SectionType/ContactUs/ContactUs";
 import { content } from "../../utils/utils";
 import SectionSlider from "../Section/SectionType/SectionSlider/SectionSlider";
+import { useWindowDimensions } from "../../utils/customHooks";
 
-const MainContent = () => {
+
+
+const MainContent = ({setVisible}) => {
   const [anchor, setAnchor] = useState()
+  const { height, width } = useWindowDimensions();
+  const [isMobile, setIsMobile] = useState(false);
   return (
     <ReactFullpage
       licenseKey={"YOUR_KEY_HERE"}
@@ -30,8 +35,16 @@ const MainContent = () => {
       ]}
       normalScrollElements={'.careers__hiring'}
       menu={"#menu"}
-      afterLoad={(origin, destination) => {setAnchor(destination?.anchor)}}
-      render={() => {
+      afterLoad={(origin, destination) => { destination?.index === 0 ? setVisible(false) : setVisible(true); setAnchor(destination?.anchor); }}
+      beforeLeave={(origin, destination) => {destination?.index === 0 ? setVisible(false) : setVisible(true);}}
+      render={({ state, fullpageApi }) => {
+
+        if(width < 992) {
+          fullpageApi?.setResponsive(true)
+        } else {
+          fullpageApi?.setResponsive(false)
+        }
+    
         return (
           <ReactFullpage.Wrapper>
             <Section customClass="intro">

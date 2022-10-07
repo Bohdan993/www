@@ -3,9 +3,11 @@ import "./Sidebar.sass";
 import { navigation } from "../../utils/utils";
 import SidebarIcon from "./SidebarIcon";
 
-const Sidebar = () => {
+const Sidebar = ({visible}) => {
+  
   return (
-    <nav className="sidebar">
+    <>
+      {visible ? ( <nav className="sidebar">
       <div className="sidebar__logo-box" data-menuanchor="Intro">
         <a href="#Intro" crossOrigin="true">
           <img src="/logo/logo.svg" alt="Svistel" className="sidebar__logo" />
@@ -17,7 +19,7 @@ const Sidebar = () => {
             index !== 0 && (
               <li
                 key={index}
-                className="side-nav__item"
+                className={`side-nav__item ${index === 1 ? 'active' : ''}`}
                 data-menuanchor={item.title}
               >
                 <a
@@ -31,7 +33,8 @@ const Sidebar = () => {
             )
         )}
       </ul>
-    </nav>
+    </nav>) : (null)}
+  </>
   );
 };
 

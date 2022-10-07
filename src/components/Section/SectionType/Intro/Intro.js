@@ -10,7 +10,7 @@ const Intro = () => {
           <img className="intro__logo" src="/logo/logo.svg" alt="Svistel" />
         </div>
         <div className="intro__text">
-          <h4 className="intro__service">Product development studio %%</h4>
+          <h4 className="intro__service">Product development studio</h4>
           <h3 className="intro__description">
             We develop human centric apps for your{" "}
             <span className="intro__description intro__description--gold">

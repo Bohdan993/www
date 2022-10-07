@@ -1,10 +1,10 @@
 import React from "react"
 import Sidebar from "../Sidebar/Sidebar"
 
-const Layout = ({children}) => {
+const Layout = ({children, visible}) => {
   return (
     <div className="global-wrapper">
-      <Sidebar/>
+      <Sidebar visible={visible}/>
       <main>{children}</main>
     </div>
   )
