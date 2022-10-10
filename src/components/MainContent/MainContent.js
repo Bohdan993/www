@@ -13,10 +13,10 @@ import { useWindowDimensions } from "../../utils/customHooks";
 
 
 
-const MainContent = ({setVisible}) => {
+const MainContent = ({setVisible, setIsMobile}) => {
   const [anchor, setAnchor] = useState()
   const { height, width } = useWindowDimensions();
-  const [isMobile, setIsMobile] = useState(false);
+
   return (
     <ReactFullpage
       licenseKey={"YOUR_KEY_HERE"}
@@ -41,8 +41,10 @@ const MainContent = ({setVisible}) => {
 
         if(width < 992) {
           fullpageApi?.setResponsive(true)
+          setIsMobile(true)
         } else {
           fullpageApi?.setResponsive(false)
+          setIsMobile(false)
         }
     
         return (

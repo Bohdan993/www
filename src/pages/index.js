@@ -5,10 +5,11 @@ import MainContent from "../components/MainContent/MainContent"
 
 const IndexPage = () => {
   const [visible, setVisible] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
   return (
-    <Layout visible={visible}>
+    <Layout visible={visible} isMobile={isMobile}>
       <Seo title="Svistel" />
-      <MainContent setVisible={setVisible} />
+      <MainContent setVisible={setVisible} setIsMobile={setIsMobile} />
     </Layout>
   )
 }

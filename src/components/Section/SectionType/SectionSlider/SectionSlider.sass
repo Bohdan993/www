@@ -11,6 +11,7 @@
     display: flex
     .slick-slide
       height: 46.9rem
+      // min-width: 340px - 16px
       margin-right: 3.2rem
       overflow: hidden
       > div  
@@ -53,4 +54,21 @@
       &[type="range"]
         width: 100%
         bottom: -41px
+
+  .slick-slider
+    .slick-track
+      .slick-slide
+        margin-right: 2.8rem
+
+@media screen and (max-width: 768px)
+  .slick-slider
+    .slick-track
+      .slick-slide
+        margin-right: 2.4rem
+
+@media screen and (max-width: 576px)
+  .slick-slider
+    .slick-track
+      .slick-slide
+        margin-right: 1.6rem
 

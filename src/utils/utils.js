@@ -523,14 +523,14 @@ export const content = {
 };
 
 export const navigation = [
-  { title: "Intro" },
-  { title: "Products" },
-  { title: "Statistic" },
-  { title: "Portfolio" },
-  { title: "Skills" },
-  { title: "Feedback" },
-  { title: "Team" },
-  { title: "Blog" },
-  { title: "Careers" },
-  { title: "ContactUs" },
+  { title: "Intro", name: "" },
+  { title: "Products", name: "Our Products" },
+  { title: "Statistic", name: "Statistic" },
+  { title: "Portfolio", name: "Portfolio" },
+  { title: "Skills", name: "Skills" },
+  { title: "Feedback", name: "Feedback" },
+  { title: "Team", name: "Team" },
+  { title: "Blog", name: "Blog" },
+  { title: "Careers", name: "Careers" },
+  { title: "ContactUs", name: "Contact Us" },
 ];

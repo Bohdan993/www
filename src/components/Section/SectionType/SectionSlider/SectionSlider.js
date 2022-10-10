@@ -19,6 +19,7 @@ const useSlider = (
       const active = "#FFF";
       const inactive = "#F5F5F53D";
       const countPosition = ((position - min) * 100) / (max - min);
+      console.log(position)
       inputRangeRef.current.style.backgroundSize = countPosition + "% 100%";
       inputRangeRef.current.style.background = `linear-gradient(90deg, ${active} 0% ${countPosition}%, ${inactive} ${countPosition}% 100%)`;
     },
@@ -54,6 +55,8 @@ const SectionSlider = ({ data, slideType, anchor }) => {
   const sliderRef = useRef(null);
   const inputRangeRef = useRef(null);
 
+
+
   const sliderProps = useSlider(
     0,
     maxSlides,
@@ -63,6 +66,7 @@ const SectionSlider = ({ data, slideType, anchor }) => {
     activeSlide,
     inputRangeRef
   );
+
 
   useEffect(() => {
     if (slideType === anchor) {
@@ -76,10 +80,19 @@ const SectionSlider = ({ data, slideType, anchor }) => {
   useEffect(() => {
     window.addEventListener("resize", handleResize);
     handleResize();
-    if (0 < windowSize.width && windowSize.width < 767) {
-      setMaxSlides(sliderRef?.current?.props?.children?.length - 1);
-      setStep(1);
+    // if (0 < windowSize.width && windowSize.width < 992) {
+    //   setMaxSlides(sliderRef?.current?.props?.children?.length - 1);
+    //   setStep(1);
+    // }
+
+    if (0 < windowSize.width && windowSize.width < 768) {
+      setMaxSlides(3.5);
     }
+
+    if (0 < windowSize.width && windowSize.width < 576) {
+      setMaxSlides(4.5);
+    }
+    
     return () => window.removeEventListener("resize", handleResize);
   }, [windowSize.width]);
 
@@ -94,21 +107,36 @@ const SectionSlider = ({ data, slideType, anchor }) => {
     autoplaySpeed: 5000,
     beforeChange: (prev, next) => {
       setActiveSlide(next);
+      console.log(next)
       next >= maxSlides && setTimeout(() => sliderRef?.current?.slickGoTo(0), 5000);
     },
     onReInit: () => {},
     responsive: [
       {
-        breakpoint: 600,
+        breakpoint: 2000,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 3.5,
           slidesToScroll: 1,
         },
       },
       {
-        breakpoint: 2000,
+        breakpoint: 992,
         settings: {
           slidesToShow: 3.5,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2.5,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 576,
+        settings: {
+          slidesToShow: 1.5,
           slidesToScroll: 1,
         },
       },

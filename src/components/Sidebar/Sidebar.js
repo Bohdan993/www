@@ -3,11 +3,11 @@ import "./Sidebar.sass";
 import { navigation } from "../../utils/utils";
 import SidebarIcon from "./SidebarIcon";
 
-const Sidebar = ({visible}) => {
+const Sidebar = ({visible, isMobile}) => {
   
   return (
     <>
-      {visible ? ( <nav className="sidebar">
+      {(visible && !isMobile) ? ( <nav className="sidebar">
       <div className="sidebar__logo-box" data-menuanchor="Intro">
         <a href="#Intro" crossOrigin="true">
           <img src="/logo/logo.svg" alt="Svistel" className="sidebar__logo" />
