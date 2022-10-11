@@ -2,7 +2,8 @@ import React from "react";
 import "../../../Section/Section.sass";
 import "../Skills/Skills.sass";
 
-const Skills = ({ data }) => {
+const Skills = ({ data, dataMobile, isMobile }) => {
+
   const Element = ({ item }) => {
     return (
       <li className="skills__item">
@@ -21,15 +22,29 @@ const Skills = ({ data }) => {
     );
   };
   return (
-    <div className="skills">
-      {data.map((el, index) => (
-        <ul className={`skills__set skills__set--${index}`}>
-          {el.map((item, index) => (
-            <Element key={index} item={item} />
+    <>
+      {!isMobile ? (
+        <div className="skills">
+          {data.map((el, index) => (
+            <ul className={`skills__set skills__set--${index}`}>
+              {el.map((item, index) => (
+                <Element key={index} item={item} />
+              ))}
+            </ul>
           ))}
-        </ul>
-      ))}
-    </div>
+        </div>
+      ) : (
+      <div className="skills">
+        {dataMobile.map((el, index) => (
+          <ul className={`skills__set skills__set--${index}`}>
+            {el.map((item, index) => (
+              <Element key={index} item={item} />
+            ))}
+          </ul>
+        ))}
+      </div>
+    )}
+  </>
   );
 };
 

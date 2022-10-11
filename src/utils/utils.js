@@ -309,6 +309,163 @@ export const content = {
       ],
     ],
   },
+  skillsMobile: {
+    title: "Skills",
+    data: [
+      [
+        {
+          id: 1,
+          title: "Javascript",
+          description:
+            "is a markup language used for structuring and presenting content on the World Wide Web",
+          direction: "right",
+          img: "javascript.svg",
+        },
+        {
+          id: 2,
+          title: "Mongodb",
+          description:
+            "is a markup language used for structuring and presenting content on the World Wide Web",
+          direction: "right",
+          img: "mongodb.svg",
+        },
+        {
+          id: "hidden",
+        },],
+        [{
+            id: 3,
+            title: "Graphql",
+            description:
+              "is a markup language used for structuring and presenting content on the World Wide Web",
+            direction: "right",
+            img: "graphql.svg",
+          },{
+            id: 4,
+            title: "Ios",
+            description:
+              "is a markup language used for structuring and presenting content on the World Wide Web",
+            direction: "right",
+            img: "ios.svg",
+          },{
+            id: 5,
+            title: "Html5",
+            description:
+              "is a markup language used for structuring and presenting content on the World Wide Web",
+            direction: "right",
+            img: "html5.svg",
+          },{
+            id: "hidden",
+          }],[
+            {
+              id: 6,
+              title: "Csharp",
+              description:
+                "is a markup language used for structuring and presenting content on the World Wide Web",
+              direction: "right",
+              img: "csharp.svg",
+            },
+            {
+              id: 7,
+              title: "Express",
+              description:
+                "is a markup language used for structuring and presenting content on the World Wide Web",
+              direction: "left",
+              img: "express.svg",
+            },
+            {
+              id: 8,
+              title: "Nodedotjs",
+              description:
+                "is a markup language used for structuring and presenting content on the World Wide Web",
+              direction: "left",
+              img: "nodedotjs.svg",
+            },
+          ],
+      [
+        {
+          id: 9,
+          title: "Mysql",
+          description:
+            "is a markup language used for structuring and presenting content on the World Wide Web",
+          direction: "right",
+          img: "mysql.svg",
+        },
+        {
+          id: 10,
+          title: "Jquery",
+          description:
+            "is a markup language used for structuring and presenting content on the World Wide Web",
+          direction: "left",
+          img: "jquery.svg",
+        },
+        {
+          id: 11,
+          title: "React",
+          description:
+            "is a markup language used for structuring and presenting content on the World Wide Web",
+          direction: "right",
+          img: "react.svg",
+        },
+        {
+          id: "hidden",
+        }
+      ],
+      [
+        {
+          id: 12,
+          title: "Unity",
+          description:
+            "is a markup language used for structuring and presenting content on the World Wide Web",
+          direction: "left",
+          img: "unity.svg",
+        },
+        {
+          id: 13,
+          title: "Blender",
+          description:
+            "is a markup language used for structuring and presenting content on the World Wide Web",
+          direction: "left",
+          img: "blender.svg",
+        },
+        {
+          id: 14,
+          title: "Typescript",
+          description:
+            "is a markup language used for structuring and presenting content on the World Wide Web",
+          direction: "right",
+          img: "typescript.svg",
+        }],
+      [
+        {
+          id: 15,
+          title: "Css3",
+          description:
+            "is a markup language used for structuring and presenting content on the World Wide Web",
+          direction: "left",
+          img: "css3.svg",
+        },
+        {
+          id: 16,
+          title: "Firebase",
+          description:
+            "is a markup language used for structuring and presenting content on the World Wide Web",
+          direction: "left",
+          img: "firebase.svg",
+        },
+        {
+          id: 17,
+          title: "Android",
+          description:
+            "is a markup language used for structuring and presenting content on the World Wide Web",
+          direction: "right",
+          img: "android.svg",
+        },
+        {
+          id: "hidden",
+        },
+      ],
+    ],
+  },
   feedback: {
     title: "Feedback",
     data: [

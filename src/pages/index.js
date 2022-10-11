@@ -9,7 +9,7 @@ const IndexPage = () => {
   return (
     <Layout visible={visible} isMobile={isMobile}>
       <Seo title="Svistel" />
-      <MainContent setVisible={setVisible} setIsMobile={setIsMobile} />
+      <MainContent setVisible={setVisible} setIsMobile={setIsMobile} isMobile={isMobile}/>
     </Layout>
   )
 }

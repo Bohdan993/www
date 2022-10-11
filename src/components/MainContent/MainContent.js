@@ -13,7 +13,7 @@ import { useWindowDimensions } from "../../utils/customHooks";
 
 
 
-const MainContent = ({setVisible, setIsMobile}) => {
+const MainContent = ({setVisible, setIsMobile, isMobile}) => {
   const [anchor, setAnchor] = useState()
   const { height, width } = useWindowDimensions();
 
@@ -70,7 +70,7 @@ const MainContent = ({setVisible, setIsMobile}) => {
               />
             </Section>
             <Section title={content?.skills.title}>
-              <Skills data={content?.skills.data}/>
+              <Skills data={content?.skills.data} dataMobile={content?.skillsMobile.data} isMobile={isMobile}/>
             </Section>
             <Section title={content?.feedback.title}>
               <Feedback data={content?.feedback.data}/>
