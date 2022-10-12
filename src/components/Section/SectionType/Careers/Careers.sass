@@ -43,7 +43,9 @@
   &__item:not(.careers__item_show) .careers__hidden-block
     display: none
   &__item:not(.careers__item_show) .careers__icon
-    background-image: url("/careers/plus.svg") 
+    background-image: url("/careers/plus.svg")
+    background-size: contain
+    background-repeat: no-repeat
   &__header
     display: flex
     justify-content: space-between
@@ -62,6 +64,8 @@
     width: 3.2rem
     height: 3.2rem
     background-image: url("/careers/minus.svg")
+    background-size: contain
+    background-repeat: no-repeat
     align-self: center
   &__tag-box
     display: flex
@@ -113,6 +117,9 @@
     padding-bottom: 14px
   .careers__hidden-block
     padding-top: 10px
+  .careers__icon
+    width: 2.8rem
+    height: 2.8rem
 
 @media screen and (max-width: 576px)
   .careers__email
@@ -120,3 +127,6 @@
   .careers__info-box
     padding: 16px
     gap: 16px
+  .careers__icon
+    width: 2.4rem
+    height: 2.4rem

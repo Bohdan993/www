@@ -18,6 +18,8 @@ body
   font-family: $base-font
   margin: auto
   color: $light-color
+  &.mobile-menu-open
+    overflow: hidden!important
 
 main
   margin-left: $sidebar-width
@@ -35,13 +37,13 @@ main
   main
     margin-left: 0px
     margin-right: 0px
-    padding: 0 30px 0 30px
+    // padding: 0 30px 0 30px
     overflow-x: hidden
 
 @media screen and (max-width: 768px)
   main
-    padding: 0 20px 0 20px
+    // padding: 0 20px 0 20px
 
 @media screen and (max-width: 576px)
   main
-    padding: 0 15px 0 15px
+    // padding: 0 15px 0 15px

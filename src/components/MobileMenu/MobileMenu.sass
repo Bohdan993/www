@@ -1,13 +1,15 @@
 @import '../../styles/_variables'
 
 .mobile-menu
-    position: fixed
-    width: 100%
-    height: 100%
-    background: #000
-    z-index: 100
-    display: flex
-    overflow-y: auto
+  position: fixed
+  width: 100%
+  height: 100%
+  background: url("/mobile-menu/blur.png") no-repeat top/cover, url("/mobile-menu/pattern.png") no-repeat right bottom/auto, $bg-color
+  z-index: 100
+  display: flex
+  overflow-y: auto
+  &.mobile-menu_inner
+    gap: 3rem
 
 .mobile-menu__item
     list-style: none
@@ -42,6 +44,22 @@
       top: 0
     &:last-child 
       top: 6px
+.menu-icon-close
+  width: 22px
+  cursor: pointer
+  position: relative
+  span
+    background-color: $light-color-lighter
+    height: 2px
+    position: absolute
+    width: 100%
+    left: 0
+    top: 50%
+    transition: all 0.3s ease
+    &:first-child 
+      transform: rotate(45deg)
+    &:last-child 
+      transform: rotate(-45deg)
 
 .mobile-menu
   display: flex
@@ -81,6 +99,7 @@
         font-size: 18px
         color: rgba($accent-color, 1)
         opacity: 1
+        font-weight: 600
   &__link
     position: relative
     display: flex
@@ -88,7 +107,8 @@
     align-items: center
     &:link,
     &:visited
-      padding: 0.6rem
+      padding-top: 1.2rem
+      padding-bottom: 1.2rem
       text-decoration: none
       fill: rgba($light-color, 0.48)
       stroke: rgba($light-color, 0.48)
@@ -111,8 +131,26 @@
     &__icon
       height: 2rem
       width: 2rem
+.mobile-menu__header_inner
+  display: flex
+  justify-content: space-between
+  align-items: center
+  .title
+    margin-bottom: unset
     
-  
+.mobile-menu_cta
+  background: #10151D
+  border-radius: 20px
+  padding: 1.6rem 0.6rem
+  text-align: center
+  p
+    font-size: 1.6rem
+    margin-bottom: 8px
+    color: $light-color-lighter
+  a
+    color: $accent-color
+    font-size: 1.6rem
+    text-decoration: none
 
 
 
@@ -132,26 +170,33 @@
 
 @media screen and (max-width: 768px)
     .mobile-menu__header
-        padding: 0 20px
+      padding: 0 20px
     .mobile-menu__logo
-        left: 20px
+      left: 20px
     .menu-icon
-        right: 20px
-        width: 20px
+      right: 20px
+      width: 20px
+    .menu-icon-close
+      width: 20px
     .mobile-menu
-        padding: 0 20px
-        padding-top: 70px
-        padding-bottom: 32px
+      padding: 0 20px
+      padding-top: 70px
+      padding-bottom: 32px
 
 @media screen and (max-width: 576px)
     .mobile-menu__header
-        padding: 0 15px
+      padding: 0 15px
     .mobile-menu__logo
-        left: 15px
+      left: 15px
     .menu-icon
-        right: 15px
-        width: 18px
+      right: 15px
+      width: 18px
     .mobile-menu
-        padding: 0 15px
-        padding-top: 70px
-        padding-bottom: 32px
+      padding: 0 15px
+      padding-top: 70px
+      padding-bottom: 32px
+    .mobile-menu__logo-img_inner, .mobile-menu__logo-img
+      max-width: 34px
+      max-height: 34px
+    .menu-icon-close
+      width: 18px

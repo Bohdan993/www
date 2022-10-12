@@ -53,23 +53,40 @@
   .slider-container
     input
       &[type="range"]
-        width: 100%
+        width: calc(100% - 30px)
         bottom: -41px
+  .slick-slider
+    width: 100%
 
   .slick-slider
     .slick-track
       .slick-slide
         margin-right: 2.8rem
+  .slider-container
+    margin-right: -30px
 
 @media screen and (max-width: 768px)
   .slick-slider
     .slick-track
       .slick-slide
         margin-right: 2.4rem
+  .slider-container
+    margin-right: -20px
+    input
+      &[type="range"]
+        width: calc(100% - 20px)
+        &::-webkit-slider-thumb
+          height: 1.6rem
+          width: 2.4rem
 
 @media screen and (max-width: 576px)
   .slick-slider
     .slick-track
       .slick-slide
         margin-right: 1.6rem
+  .slider-container
+    margin-right: -15px
+    input
+      &[type="range"]
+        width: calc(100% - 15px)
 

@@ -37,9 +37,6 @@
     flex-direction: column
     align-items: center
     gap: 0.7vw
-    position: absolute
-    bottom: -10%
-    right: 50%
     &-text
       font-size: 1.2rem
       font-weight: 400
@@ -47,7 +44,9 @@
       color: $light-color-lighter
     &-icon
       width: 1.7vw
-      height: 1.7vw  
+      height: 1.7vw
+      min-width: 15px
+      min-height: 15px
       &--animation
         animation: moveInBottom 5s infinite ease-in-out 2s
         @keyframes moveInBottom 
@@ -57,14 +56,17 @@
             transform: translateY(0)
 
 @media screen and (max-width: 992px) 
+  .section.fp-section.fp-table.intro
+    padding-top: 175px
+    height: 100vh
   .intro__nav
-    transform: translateX(50%)
+    // transform: translateX(50%)
+    gap: 1.8rem
   .intro__text
     width: 80vw
   .intro__logo-box
     display: none
-  .section.fp-section.fp-table.intro
-    padding-top: 110px
+  
 
 @media screen and (max-width: 768px) 
   .intro__description
@@ -74,6 +76,8 @@
     line-height: 1.25
 
 @media screen and (max-width: 576px)
+  .intro
+    margin-top: auto
   .intro__description
     font-size: 2.8rem
   .intro__service
@@ -86,3 +90,7 @@
     margin-bottom: 0
   .intro__nav-text
     font-size: 1.4rem
+  .section.fp-section.fp-table.intro
+    padding-top: 0
+    height: 100vh
+    min-height: 480px

@@ -103,6 +103,11 @@ const Statistic = ({ data }) => {
             src="/statistic/graph-line.svg"
             alt="Diagram"
           />
+          <img
+            className="statistic__svg-diagram-mobile"
+            src="/statistic/graph-line-mobile.svg"
+            alt="Diagram"
+          />
         </figure>
       </div>
     </div>

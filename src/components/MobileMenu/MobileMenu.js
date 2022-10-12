@@ -24,6 +24,12 @@ const MobileMenu = ({isMobile}) => {
         setShow(false)
     }, [isMobile])
 
+
+    useEffect(()=>{
+        if(show) document.body.classList.add('mobile-menu-open');
+        if(!show) document.body.classList.remove('mobile-menu-open');
+    }, [show])
+
     return (
         <div className='mobile-menu__container'>
             {(isMobile && !show) && (
@@ -41,33 +47,50 @@ const MobileMenu = ({isMobile}) => {
             )}
 
             {isMobile && show ? (
-                <nav className="mobile-menu">
-                {/* <div className="sidebar__logo-box" data-menuanchor="Intro">
+                <div className="mobile-menu mobile-menu_inner">
+                    <div className="mobile-menu__header_inner">
+                        <a href="#Intro" crossOrigin="true" className="mobile-menu__logo_inner" onClick={(e) => {clickHandlerClose(); clickHandleChangeActive('Intro')}}>
+                            <img src="/logo/logo.svg" alt="Svistel" className="mobile-menu__logo-img_inner" />
+                        </a>
+                        <h2 className="title">Menu</h2>
+                        <div className="menu-icon-close" onClick={clickHandlerClose}>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                    <nav className="mobile-menu__nav">
+                    <ul  className="mobile-menu__list" id="mobile-menu__list">
+                        {navigation?.map(
+                        (item, index) => {
+                            return (index !== 0) && (index !== navigation.length - 1) && (
+                                <li
+                                    key={index}
+                                    className={`mobile-menu__item ${active === item.title ? 'active' : ''}`}
+                                    data-menuanchor={item.title}
+                                >
+                                    <a
+                                    href={`#${item.title}`}
+                                    crossOrigin="true"
+                                    className={`mobile-menu__link mobile-menu__link--${index}`}
+                                    onClick={(e) => {clickHandlerClose(e); clickHandleChangeActive(item.title);}}
+                                    >
+                                        <MenuIcon icon={item.title} />
+                                    <p>{item.name}</p>
+                                    </a>
+                                </li>
+                            )
+                        }
 
-                </div> */}
-                <ul  className="mobile-menu__list" id="mobile-menu__list">
-                    {navigation?.map(
-                    (item, index) =>
-                        index !== 0 && (
-                        <li
-                            key={index}
-                            className={`mobile-menu__item ${active === item.title ? 'active' : ''}`}
-                            data-menuanchor={item.title}
-                        >
-                            <a
-                            href={`#${item.title}`}
-                            crossOrigin="true"
-                            className={`mobile-menu__link mobile-menu__link--${index}`}
-                            onClick={(e) => {clickHandlerClose(e); clickHandleChangeActive(item.title);}}
-                            >
-                                <MenuIcon icon={item.title} />
-                            <p>{item.name}</p>
-                            </a>
-                        </li>
-                        )
-                    )}
-                </ul>
-            </nav>
+                        )}
+                    </ul>
+                </nav>
+                <div className="mobile-menu_cta">
+                    <p>Contact Us</p>
+                    <a href="mailto:info@svistel.in">
+                        info@svistel.in
+                    </a>
+                </div>
+            </div>
             ) : (null)}
         </div>
     );

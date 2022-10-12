@@ -70,8 +70,8 @@ const SectionSlider = ({ data, slideType, anchor }) => {
 
   useEffect(() => {
     if (slideType === anchor) {
-      // sliderRef.current.innerSlider.autoPlay("play")
-      // sliderRef.current.slickPlay()
+      sliderRef.current.innerSlider.autoPlay("play")
+      sliderRef.current.slickPlay()
     }
     }, [anchor, slideType])
 
@@ -90,7 +90,8 @@ const SectionSlider = ({ data, slideType, anchor }) => {
     }
 
     if (0 < windowSize.width && windowSize.width < 576) {
-      setMaxSlides(4.5);
+      setStep(0.25)
+      setMaxSlides(4.75);
     }
     
     return () => window.removeEventListener("resize", handleResize);
@@ -107,7 +108,8 @@ const SectionSlider = ({ data, slideType, anchor }) => {
     autoplaySpeed: 5000,
     beforeChange: (prev, next) => {
       setActiveSlide(next);
-      // next >= maxSlides && setTimeout(() => sliderRef?.current?.slickGoTo(0), 5000);
+      console.log(next)
+      next >= maxSlides && setTimeout(() => sliderRef?.current?.slickGoTo(0), 5000);
     },
     onReInit: () => {},
     responsive: [
@@ -128,7 +130,7 @@ const SectionSlider = ({ data, slideType, anchor }) => {
       {
         breakpoint: 576,
         settings: {
-          slidesToShow: 1.5,
+          slidesToShow: 1.25,
           slidesToScroll: 1,
         },
       },
