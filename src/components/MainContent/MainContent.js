@@ -34,7 +34,7 @@ const MainContent = ({setVisible, setIsMobile, isMobile}) => {
         "ContactUs",
       ]}
       normalScrollElements={'.careers__hiring'}
-      menu={"#menu"}
+      menu={"#menu, #mobile-menu__list"}
       afterLoad={(origin, destination) => { destination?.index === 0 ? setVisible(false) : setVisible(true); setAnchor(destination?.anchor); }}
       beforeLeave={(origin, destination) => {destination?.index === 0 ? setVisible(false) : setVisible(true);}}
       render={({ state, fullpageApi }) => {
