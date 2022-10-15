@@ -27,7 +27,7 @@
     &--gold
       color: $accent-color
   &__content    
-    position: relative
+    // position: relative
   &__banner, &__banner-mobile
     width: 100%
   &__banner-mobile
@@ -37,6 +37,10 @@
     flex-direction: column
     align-items: center
     gap: 0.7vw
+    position: absolute
+    bottom: 30px
+    left: 50%
+    transform: translateX(-50%)
     &-text
       font-size: 1.2rem
       font-weight: 400
@@ -54,6 +58,8 @@
             transform: translateY(-0.6rem)
           25%, 100%
             transform: translateY(0)
+.intro__nav-icon_mobile
+  display: none
 
 @media screen and (max-width: 992px) 
   .section.fp-section.fp-table.intro
@@ -67,6 +73,10 @@
     width: 80vw
   .intro__logo-box
     display: none
+  .intro__nav-icon
+    display: none
+  .intro__nav-icon.intro__nav-icon_mobile
+    display: block
   
 
 @media screen and (max-width: 768px) 

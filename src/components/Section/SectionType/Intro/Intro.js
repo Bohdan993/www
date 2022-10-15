@@ -29,6 +29,11 @@ const Intro = () => {
             src="/intro/mouse.svg"
             alt="Mouse"
           />
+          <img
+            className="intro__nav-icon intro__nav-icon_mobile"
+            src="/intro/arrow.svg"
+            alt="Arrow"
+          />
         </div>
       </div>
     </div>
