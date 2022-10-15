@@ -13,7 +13,7 @@ import { useWindowDimensions } from "../../utils/customHooks";
 
 
 
-const MainContent = ({setVisible, setIsMobile, isMobile}) => {
+const MainContent = ({setVisible, setIsMobile, isMobile, setShow}) => {
   const [anchor, setAnchor] = useState()
   const { height, width } = useWindowDimensions();
 
@@ -39,58 +39,61 @@ const MainContent = ({setVisible, setIsMobile, isMobile}) => {
       beforeLeave={(origin, destination) => {destination?.index === 0 ? setVisible(false) : setVisible(true);}}
       render={({ state, fullpageApi }) => {
 
-        if(width < 992) {
-          fullpageApi?.setResponsive(true)
+        if(width <= 992) {
+        //   fullpageApi?.setResponsive(true)
           setIsMobile(true)
         } else {
-          fullpageApi?.setResponsive(false)
+        //   fullpageApi?.setResponsive(false)
           setIsMobile(false)
         }
     
         return (
           <ReactFullpage.Wrapper>
-            <Section customClass="intro">
+            <Section customClass="intro" isMobile={isMobile} setShow={setShow}>
               <Intro />
             </Section>
-            <Section title={content?.products.title}>
+            <Section title={content?.products.title} isMobile={isMobile} setShow={setShow}>
               <SectionSlider
                 anchor={anchor}
                 data={content?.products.data}
                 slideType={"Products"}
               />
             </Section>
-            <Section title={content?.statistic.title}>
+            <Section title={content?.statistic.title} isMobile={isMobile} setShow={setShow}>
               <Statistic data={content?.statistic}/>
             </Section>
-            <Section title={content?.portfolio.title}>
+            <Section title={content?.portfolio.title} isMobile={isMobile} setShow={setShow}>
               <SectionSlider
                 anchor={anchor}
                 data={content?.portfolio.data}
                 slideType={"Portfolio"}
               />
             </Section>
-            <Section title={content?.skills.title}>
+            <Section title={content?.skills.title} isMobile={isMobile} setShow={setShow}>
               <Skills data={content?.skills.data} dataMobile={content?.skillsMobile.data} isMobile={isMobile}/>
             </Section>
-            <Section title={content?.feedback.title}>
-              <Feedback data={content?.feedback.data}/>
+            <Section title={content?.feedback.title} isMobile={isMobile} setShow={setShow}>
+              {!isMobile ? (<Feedback data={content?.feedback.data}/>) : <SectionSlider
+                data={content?.feedback.data}
+                slideType={"Feedback"}
+                anchor={anchor}/>}
             </Section>
-            <Section title={content?.team.title}>
+            <Section title={content?.team.title} isMobile={isMobile} setShow={setShow}>
               <SectionSlider
                 data={content?.team.data}
                 slideType={"Team"}
                 anchor={anchor}/>
             </Section>
-            <Section title={content?.blog.title}>
+            <Section title={content?.blog.title} isMobile={isMobile} setShow={setShow}>
               <SectionSlider
                 data={content?.blog.data}
                 slideType={"Blog"}
                 anchor={anchor}/>
             </Section>
-            <Section title={content?.careers.title}>
+            <Section title={content?.careers.title} isMobile={isMobile} setShow={setShow}>
               <Careers data={content?.careers.data}/>
             </Section>
-            <Section title={content?.contactUs.title}>
+            <Section title={content?.contactUs.title} isMobile={isMobile} setShow={setShow}>
               <ContactUs data={content?.contactUs}/>
             </Section>
           </ReactFullpage.Wrapper>

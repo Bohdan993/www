@@ -87,7 +87,7 @@
   .skills__text.skills__text--left, .skills__text.skills__text--right
     top: unset
     left: 50%
-    bottom: -25%
+    bottom: -150px
     transform: translateX(-50%)
     right: unset
   .skills__box
@@ -101,6 +101,9 @@
   .skills
     padding-left: 43px
     position: relative
+    justify-content: flex-start
+    height: auto
+    
     @for $i from 1 through length($skill-outline-colors-mobile)
       .skills__box--#{$i}:hover
         border: 0.25rem solid nth($skill-outline-colors-mobile, $i)

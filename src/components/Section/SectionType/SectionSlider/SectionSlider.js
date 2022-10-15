@@ -86,13 +86,27 @@ const SectionSlider = ({ data, slideType, anchor }) => {
     // }
 
     if (0 < windowSize.width && windowSize.width < 992) {
-      setMaxSlides(3.5);
+      setStep(0.5)
+      setMaxSlides(sliderRef?.current?.props?.children?.length - sliderRef?.current?.props?.responsive[1]?.settings?.slidesToShow);
+    }
+
+    if (0 < windowSize.width && windowSize.width < 768) {
+      setStep(0.25)
+      setMaxSlides(sliderRef?.current?.props?.children?.length - sliderRef?.current?.props?.responsive[2]?.settings?.slidesToShow);
     }
 
     if (0 < windowSize.width && windowSize.width < 576) {
       setStep(0.25)
-      setMaxSlides(4.75);
+      setMaxSlides(sliderRef?.current?.props?.children?.length - sliderRef?.current?.props?.responsive[3]?.settings?.slidesToShow);
     }
+
+
+    if (0 < windowSize.width && windowSize.width < 420) {
+      setStep(0.25)
+      setMaxSlides(sliderRef?.current?.props?.children?.length - sliderRef?.current?.props?.responsive[4]?.settings?.slidesToShow);
+    }
+
+    
     
     return () => window.removeEventListener("resize", handleResize);
   }, [windowSize.width]);
@@ -108,7 +122,6 @@ const SectionSlider = ({ data, slideType, anchor }) => {
     autoplaySpeed: 5000,
     beforeChange: (prev, next) => {
       setActiveSlide(next);
-      console.log(next)
       next >= maxSlides && setTimeout(() => sliderRef?.current?.slickGoTo(0), 5000);
     },
     onReInit: () => {},
@@ -117,21 +130,35 @@ const SectionSlider = ({ data, slideType, anchor }) => {
         breakpoint: 2000,
         settings: {
           slidesToShow: 3.5,
-          slidesToScroll: 1,
+          slidesToScroll: 1
         },
       },
       {
         breakpoint: 992,
         settings: {
           slidesToShow: 2.5,
-          slidesToScroll: 1,
+          slidesToScroll: 1
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2.25,
+          slidesToScroll: 1
         },
       },
       {
         breakpoint: 576,
         settings: {
+          slidesToShow: 1.75,
+          slidesToScroll: 1
+        },
+      },
+      {
+        breakpoint: 420,
+        settings: {
           slidesToShow: 1.25,
-          slidesToScroll: 1,
+          slidesToScroll: 1
         },
       },
     ],
@@ -143,7 +170,7 @@ const SectionSlider = ({ data, slideType, anchor }) => {
         {data?.map((slide, index) => {
           const {
             title, img, description, tags, link, firstName, secondName,
-            position, location, color,
+            position, location, color, name, company
           } = slide;
           switch (slideType) {
             case "Products":
@@ -230,6 +257,18 @@ const SectionSlider = ({ data, slideType, anchor }) => {
                   </div>
                 </div>
               );
+              case "Feedback":
+                return (
+                  <div className="feedback__block" key={index}>
+                  <h3 className="feedback__name">{name}</h3>
+                  <div className="feedback__role-box">
+                    <span className="feedback__position">{position}</span>
+                    {company && <span className="feedback__separation">|</span>}
+                    <span className="feedback__company">{company}</span>
+                  </div>
+                  <p className="feedback__description">{description}</p>
+                </div>
+                );
             default:
               return (
                 <div key={index}>

@@ -4,8 +4,8 @@ import MenuIcon from "./MenuIcon";
 import "./MobileMenu.sass";
 
 
-const MobileMenu = ({isMobile}) => {
-    const [show, setShow] = useState(false);
+const MobileMenu = ({isMobile, show, setShow}) => {
+
     const [active, setActive] = useState('Products')
 
     const clickHandlerShow = (e) => {
@@ -32,7 +32,7 @@ const MobileMenu = ({isMobile}) => {
 
     return (
         <div className='mobile-menu__container'>
-            {(isMobile && !show) && (
+            {/* {(isMobile && !show) && (
                 <>
                     <div className="mobile-menu__header">
                         <a href="#Intro" crossOrigin="true" className="mobile-menu__logo">
@@ -44,7 +44,7 @@ const MobileMenu = ({isMobile}) => {
                         </div>
                     </div>
                 </>
-            )}
+            )} */}
 
             {isMobile && show ? (
                 <div className="mobile-menu mobile-menu_inner">
