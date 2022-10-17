@@ -85,26 +85,31 @@ const SectionSlider = ({ data, slideType, anchor }) => {
     //   setStep(1);
     // }
 
-    if (0 < windowSize.width && windowSize.width < 992) {
-      setStep(0.5)
+    if (0 < windowSize.width && windowSize.width <= 1200) {
+      setStep(1)
       setMaxSlides(sliderRef?.current?.props?.children?.length - sliderRef?.current?.props?.responsive[1]?.settings?.slidesToShow);
     }
 
-    if (0 < windowSize.width && windowSize.width < 768) {
-      setStep(0.25)
-      setMaxSlides(sliderRef?.current?.props?.children?.length - sliderRef?.current?.props?.responsive[2]?.settings?.slidesToShow);
-    }
+    // if (0 < windowSize.width && windowSize.width <= 992) {
+    //   setStep(1)
+    //   setMaxSlides(sliderRef?.current?.props?.children?.length - sliderRef?.current?.props?.responsive[1]?.settings?.slidesToShow);
+    // }
 
-    if (0 < windowSize.width && windowSize.width < 576) {
-      setStep(0.25)
-      setMaxSlides(sliderRef?.current?.props?.children?.length - sliderRef?.current?.props?.responsive[3]?.settings?.slidesToShow);
-    }
+    // if (0 < windowSize.width && windowSize.width <= 768) {
+    //   // setStep(0.25)
+    //   setMaxSlides(sliderRef?.current?.props?.children?.length - sliderRef?.current?.props?.responsive[2]?.settings?.slidesToShow);
+    // }
+
+    // if (0 < windowSize.width && windowSize.width <= 576) {
+    //   // setStep(0.25)
+    //   setMaxSlides(sliderRef?.current?.props?.children?.length - sliderRef?.current?.props?.responsive[3]?.settings?.slidesToShow);
+    // }
 
 
-    if (0 < windowSize.width && windowSize.width < 420) {
-      setStep(0.25)
-      setMaxSlides(sliderRef?.current?.props?.children?.length - sliderRef?.current?.props?.responsive[4]?.settings?.slidesToShow);
-    }
+    // if (0 < windowSize.width && windowSize.width <= 420) {
+    //   // setStep(0.25)
+    //   setMaxSlides(sliderRef?.current?.props?.children?.length - sliderRef?.current?.props?.responsive[4]?.settings?.slidesToShow);
+    // }
 
     
     
@@ -134,33 +139,49 @@ const SectionSlider = ({ data, slideType, anchor }) => {
         },
       },
       {
-        breakpoint: 992,
+        breakpoint: 1200,
         settings: {
-          slidesToShow: 2.5,
-          slidesToScroll: 1
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          variableWidth: true,
         },
       },
       {
         breakpoint: 768,
         settings: {
-          slidesToShow: 2.25,
-          slidesToScroll: 1
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          variableWidth: true,
         },
       },
-      {
-        breakpoint: 576,
-        settings: {
-          slidesToShow: 1.75,
-          slidesToScroll: 1
-        },
-      },
-      {
-        breakpoint: 420,
-        settings: {
-          slidesToShow: 1.25,
-          slidesToScroll: 1
-        },
-      },
+      // {
+      //   breakpoint: 992,
+      //   settings: {
+      //     slidesToShow: 2.5,
+      //     slidesToScroll: 1,
+      //   },
+      // },
+      // {
+      //   breakpoint: 768,
+      //   settings: {
+      //     slidesToShow: 2.25,
+      //     slidesToScroll: 1
+      //   },
+      // },
+      // {
+      //   breakpoint: 576,
+      //   settings: {
+      //     slidesToShow: 1.75,
+      //     slidesToScroll: 1
+      //   },
+      // },
+      // {
+      //   breakpoint: 420,
+      //   settings: {
+      //     slidesToShow: 1.25,
+      //     slidesToScroll: 1
+      //   },
+      // },
     ],
   };
 
@@ -175,7 +196,7 @@ const SectionSlider = ({ data, slideType, anchor }) => {
           switch (slideType) {
             case "Products":
               return (
-                <div className="products" key={index}>
+                <div className="products" key={index} style={{ width: 340 }}>
                   <div className="products__content">
                     <h3 className="products__title">{title}</h3>
                     <p className="products__description">{description}</p>
@@ -189,7 +210,7 @@ const SectionSlider = ({ data, slideType, anchor }) => {
               );
             case "Portfolio":
               return (
-                <div className="portfolio" key={index}>
+                <div className="portfolio" key={index} style={{ width: 340 }}>
                   <div className="portfolio__img-box">
                     <img
                       className="portfolio__img"
@@ -212,7 +233,7 @@ const SectionSlider = ({ data, slideType, anchor }) => {
               );
             case "Team":
               return (
-                <div className="team" key={index}>
+                <div className="team" key={index} style={{ width: 340 }}>
                   <div className="team__content">
                     <div className="team__tag-box">
                       <span className="team__position" style={{ color: color }}>
@@ -241,7 +262,7 @@ const SectionSlider = ({ data, slideType, anchor }) => {
               );
             case "Blog":
               return (
-                <div className="blog" key={index}>
+                <div className="blog" key={index} style={{ width: 340 }}>
                   <img className="blog__img" src={`blog/${img}`} alt="Blog" />
                   <div className="blog__content">
                     <h3 className="blog__title">{title}</h3>
@@ -259,7 +280,7 @@ const SectionSlider = ({ data, slideType, anchor }) => {
               );
               case "Feedback":
                 return (
-                  <div className="feedback__block" key={index}>
+                  <div className="feedback__block" key={index} style={{ width: 340 }}>
                   <h3 className="feedback__name">{name}</h3>
                   <div className="feedback__role-box">
                     <span className="feedback__position">{position}</span>
@@ -271,7 +292,7 @@ const SectionSlider = ({ data, slideType, anchor }) => {
                 );
             default:
               return (
-                <div key={index}>
+                <div key={index} style={{ width: 340 }}>
                   <img src={img} alt="" width={"100%"} />
                 </div>
               );
