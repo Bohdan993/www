@@ -12,6 +12,7 @@
     .slick-slide
       height: auto
       min-height: 46.9rem
+      max-height: 46.9rem
       // min-width: 340px - 16px
       margin-right: 3.2rem
       overflow: hidden
@@ -54,6 +55,10 @@
     display: block
   .slick-slider, .slick-list, .slick-track, .slick-slider .slick-track .slick-slide
     height: 100%
+  .slick-slider
+    .slick-track
+      .slick-slide
+        margin-right: 3rem
 
 @media screen and (max-width: 992px)
   .slider-container
