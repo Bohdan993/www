@@ -90,10 +90,10 @@ const SectionSlider = ({ data, slideType, anchor }) => {
       setMaxSlides(sliderRef?.current?.props?.children?.length - sliderRef?.current?.props?.responsive[1]?.settings?.slidesToShow);
     }
 
-    // if (0 < windowSize.width && windowSize.width <= 992) {
-    //   setStep(1)
-    //   setMaxSlides(sliderRef?.current?.props?.children?.length - sliderRef?.current?.props?.responsive[1]?.settings?.slidesToShow);
-    // }
+    if (0 < windowSize.width && windowSize.width <= 768) {
+      setStep(1)
+      setMaxSlides(sliderRef?.current?.props?.children?.length - sliderRef?.current?.props?.responsive[2]?.settings?.slidesToShow);
+    }
 
     // if (0 < windowSize.width && windowSize.width <= 768) {
     //   // setStep(0.25)
