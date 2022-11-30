@@ -19,7 +19,6 @@ const useSlider = (
       const active = "#FFF";
       const inactive = "#F5F5F53D";
       const countPosition = ((position - min) * 100) / (max - min);
-      console.log(position)
       inputRangeRef.current.style.backgroundSize = countPosition + "% 100%";
       inputRangeRef.current.style.background = `linear-gradient(90deg, ${active} 0% ${countPosition}%, ${inactive} ${countPosition}% 100%)`;
     },
@@ -55,8 +54,6 @@ const SectionSlider = ({ data, slideType, anchor }) => {
   const sliderRef = useRef(null);
   const inputRangeRef = useRef(null);
 
-
-
   const sliderProps = useSlider(
     0,
     maxSlides,
@@ -67,52 +64,34 @@ const SectionSlider = ({ data, slideType, anchor }) => {
     inputRangeRef
   );
 
-
   useEffect(() => {
     if (slideType === anchor) {
-      sliderRef.current.innerSlider.autoPlay("play")
-      sliderRef.current.slickPlay()
+      sliderRef.current.innerSlider.autoPlay("play");
+      sliderRef.current.slickPlay();
     }
-    }, [anchor, slideType])
+  }, [anchor, slideType]);
 
   const handleResize = () => setWindowSize({ width: window.innerWidth });
 
   useEffect(() => {
     window.addEventListener("resize", handleResize);
     handleResize();
-    // if (0 < windowSize.width && windowSize.width < 992) {
-    //   setMaxSlides(sliderRef?.current?.props?.children?.length - 1);
-    //   setStep(1);
-    // }
-
     if (0 < windowSize.width && windowSize.width <= 1200) {
-      setStep(1)
-      setMaxSlides(sliderRef?.current?.props?.children?.length - sliderRef?.current?.props?.responsive[1]?.settings?.slidesToShow);
+      setStep(1);
+      setMaxSlides(
+        sliderRef?.current?.props?.children?.length -
+          sliderRef?.current?.props?.responsive[1]?.settings?.slidesToShow
+      );
     }
 
     if (0 < windowSize.width && windowSize.width <= 768) {
-      setStep(1)
-      setMaxSlides(sliderRef?.current?.props?.children?.length - sliderRef?.current?.props?.responsive[2]?.settings?.slidesToShow);
+      setStep(1);
+      setMaxSlides(
+        sliderRef?.current?.props?.children?.length -
+          sliderRef?.current?.props?.responsive[2]?.settings?.slidesToShow
+      );
     }
 
-    // if (0 < windowSize.width && windowSize.width <= 768) {
-    //   // setStep(0.25)
-    //   setMaxSlides(sliderRef?.current?.props?.children?.length - sliderRef?.current?.props?.responsive[2]?.settings?.slidesToShow);
-    // }
-
-    // if (0 < windowSize.width && windowSize.width <= 576) {
-    //   // setStep(0.25)
-    //   setMaxSlides(sliderRef?.current?.props?.children?.length - sliderRef?.current?.props?.responsive[3]?.settings?.slidesToShow);
-    // }
-
-
-    // if (0 < windowSize.width && windowSize.width <= 420) {
-    //   // setStep(0.25)
-    //   setMaxSlides(sliderRef?.current?.props?.children?.length - sliderRef?.current?.props?.responsive[4]?.settings?.slidesToShow);
-    // }
-
-    
-    
     return () => window.removeEventListener("resize", handleResize);
   }, [windowSize.width]);
 
@@ -127,7 +106,8 @@ const SectionSlider = ({ data, slideType, anchor }) => {
     autoplaySpeed: 5000,
     beforeChange: (prev, next) => {
       setActiveSlide(next);
-      next >= maxSlides && setTimeout(() => sliderRef?.current?.slickGoTo(0), 5000);
+      next >= maxSlides &&
+        setTimeout(() => sliderRef?.current?.slickGoTo(0), 5000);
     },
     onReInit: () => {},
     responsive: [
@@ -135,7 +115,7 @@ const SectionSlider = ({ data, slideType, anchor }) => {
         breakpoint: 2000,
         settings: {
           slidesToShow: 3.5,
-          slidesToScroll: 1
+          slidesToScroll: 1,
         },
       },
       {
@@ -154,34 +134,6 @@ const SectionSlider = ({ data, slideType, anchor }) => {
           variableWidth: true,
         },
       },
-      // {
-      //   breakpoint: 992,
-      //   settings: {
-      //     slidesToShow: 2.5,
-      //     slidesToScroll: 1,
-      //   },
-      // },
-      // {
-      //   breakpoint: 768,
-      //   settings: {
-      //     slidesToShow: 2.25,
-      //     slidesToScroll: 1
-      //   },
-      // },
-      // {
-      //   breakpoint: 576,
-      //   settings: {
-      //     slidesToShow: 1.75,
-      //     slidesToScroll: 1
-      //   },
-      // },
-      // {
-      //   breakpoint: 420,
-      //   settings: {
-      //     slidesToShow: 1.25,
-      //     slidesToScroll: 1
-      //   },
-      // },
     ],
   };
 
@@ -190,8 +142,18 @@ const SectionSlider = ({ data, slideType, anchor }) => {
       <Slider ref={sliderRef} {...settingsSlider}>
         {data?.map((slide, index) => {
           const {
-            title, img, description, tags, link, firstName, secondName,
-            position, location, color, name, company
+            title,
+            img,
+            description,
+            tags,
+            link,
+            firstName,
+            secondName,
+            position,
+            location,
+            color,
+            name,
+            company,
           } = slide;
           switch (slideType) {
             case "Products":
@@ -278,9 +240,13 @@ const SectionSlider = ({ data, slideType, anchor }) => {
                   </div>
                 </div>
               );
-              case "Feedback":
-                return (
-                  <div className="feedback__block" key={index} style={{ width: 340 }}>
+            case "Feedback":
+              return (
+                <div
+                  className="feedback__block"
+                  key={index}
+                  style={{ width: 340 }}
+                >
                   <h3 className="feedback__name">{name}</h3>
                   <div className="feedback__role-box">
                     <span className="feedback__position">{position}</span>
@@ -289,19 +255,22 @@ const SectionSlider = ({ data, slideType, anchor }) => {
                   </div>
                   <p className="feedback__description">{description}</p>
                 </div>
-                );
+              );
             default:
               return (
                 <div key={index} style={{ width: 340 }}>
                   <img src={img} alt="" width={"100%"} />
                 </div>
               );
-            }
+          }
         })}
       </Slider>
-      <input ref={inputRangeRef} {...sliderProps}
-             onMouseEnter={() => sliderRef.current.slickPause()}
-             onMouseLeave={() => sliderRef.current.slickPlay()} />
+      <input
+        ref={inputRangeRef}
+        {...sliderProps}
+        onMouseEnter={() => sliderRef.current.slickPause()}
+        onMouseLeave={() => sliderRef.current.slickPlay()}
+      />
     </div>
   );
 };

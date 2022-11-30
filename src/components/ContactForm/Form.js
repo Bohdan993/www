@@ -42,7 +42,7 @@ const ContactForm = () => {
             placeholder="Eddie Murphy"
             name="name"
             type="text"
-            spellcheck="false"
+            spellCheck="false"
             value={values.name || ""}
             error={errors.name}
             handleChange={(event) => handleChange("name", event.target.value)}
@@ -61,7 +61,7 @@ const ContactForm = () => {
             placeholder="me@example.com"
             name="email"
             type="email"
-            spellcheck="false"
+            spellCheck="false"
             value={values.email || ""}
             error={errors.email}
             handleChange={(event) => handleChange("email", event.target.value)}
@@ -80,7 +80,7 @@ const ContactForm = () => {
           placeholder="Write your message"
           name="message"
           type="text"
-          spellcheck="false"
+          spellCheck="false"
           value={values.message || ""}
           handleChange={(event) => handleChange("message", event.target.value)}
         />

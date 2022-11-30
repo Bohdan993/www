@@ -9,7 +9,7 @@ const Input = ({
   ...otherProps
 }) => {
   return (
-    <div>
+    <div className="form__input-container">
       {label && (
         <label className={labelClassName} htmlFor={label}>
           {label}

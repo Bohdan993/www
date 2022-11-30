@@ -21,7 +21,11 @@ const Intro = () => {
       </div>
       <div className="intro__content">
         <img className="intro__banner" src="/intro/banner.png" alt="Banner" />
-        <img className="intro__banner-mobile" src="/intro/banner-mobile.png" alt="Banner" />
+        <img
+          className="intro__banner-mobile"
+          src="/intro/banner-mobile.png"
+          alt="Banner"
+        />
         <div className="intro__nav">
           <span className="intro__nav-text">go to our projects</span>
           <img

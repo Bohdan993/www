@@ -25,9 +25,7 @@
     line-height: 120%
     color: $light-color
     &--gold
-      color: $accent-color
-  &__content    
-    // position: relative
+      color: $accent-color    
   &__banner, &__banner-mobile
     width: 100%
   &__banner-mobile
@@ -38,8 +36,8 @@
     align-items: center
     gap: 0.7vw
     position: absolute
-    bottom: 30px
-    left: 50%
+    bottom: 3rem
+    left: calc(50% - 6rem)
     transform: translateX(-50%)
     &-text
       font-size: 1.2rem
@@ -48,9 +46,9 @@
       color: $light-color-lighter
     &-icon
       width: 1.7vw
-      height: 1.7vw
-      min-width: 15px
-      min-height: 15px
+      height: 1.7vw  
+      min-width: 1.5rem
+      min-height: 1.5rem
       &--animation
         animation: moveInBottom 5s infinite ease-in-out 2s
         @keyframes moveInBottom 
@@ -61,13 +59,16 @@
 .intro__nav-icon_mobile
   display: none
 
+@media screen and (max-width: 1200px) 
+  .intro__nav
+    left: calc(50% - 5rem)
 @media screen and (max-width: 992px) 
   .section.fp-section.fp-table.intro
     height: 100vh
     .mobile-menu__header
       margin-bottom: 0
   .intro__nav
-    // transform: translateX(50%)
+    left: 50%
     gap: 1.8rem
   .intro__text
     width: 80vw
@@ -77,18 +78,17 @@
     display: none
   .intro__nav-icon.intro__nav-icon_mobile
     display: block
-  
-
 @media screen and (max-width: 768px) 
   .intro__description
     font-size: 3.2rem
   .intro__service
     font-size: 1.8rem
     line-height: 1.25
-
+  .intro__nav
+    left: 50%
 @media screen and (max-width: 576px)
-  .intro
-    margin-top: auto
+  .intro:not(.section)
+    margin-top: 9.6rem
   .intro__description
     font-size: 2.8rem
   .intro__service
@@ -99,9 +99,10 @@
     display: none
   .intro__header
     margin-bottom: 0
+  .intro__nav
+    left: 50%
   .intro__nav-text
     font-size: 1.4rem
   .section.fp-section.fp-table.intro
-    // padding-top: 0
     height: 100vh
-    min-height: 480px
+    min-height: 48rem

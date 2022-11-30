@@ -47,56 +47,56 @@ export const content = {
       count: "12+",
       tags: [
         {
-          name: 'SaaS',
-          score: '8%'
+          name: "SaaS",
+          score: "8%",
         },
         {
-          name: 'E-com',
-          score: '32%'
+          name: "E-com",
+          score: "32%",
         },
         {
-          name: 'Crypto',
-          score: '24%'
+          name: "Crypto",
+          score: "24%",
         },
         {
-          name: 'Fintech',
-          score: '16%'
+          name: "Fintech",
+          score: "16%",
         },
         {
-          name: 'Gamedev',
-          score: '13%'
+          name: "Gamedev",
+          score: "13%",
         },
         {
-          name: 'Tourism',
-          score: '7%'
+          name: "Tourism",
+          score: "7%",
         },
         {
-          name: 'Fintech',
-          score: '16%'
+          name: "Fintech",
+          score: "16%",
         },
         {
-          name: 'Gamedev',
-          score: '13%'
+          name: "Gamedev",
+          score: "13%",
         },
         {
-          name: 'Tourism',
-          score: '7%'
+          name: "Tourism",
+          score: "7%",
         },
         {
-          name: 'E-com',
-          score: '32%'
+          name: "E-com",
+          score: "32%",
         },
         {
-          name: 'Crypto',
-          score: '24%'
+          name: "Crypto",
+          score: "24%",
         },
         {
-          name: 'Fintech',
-          score: '16%'
+          name: "Fintech",
+          score: "16%",
         },
       ],
     },
-    ownProjects: '12',
+    ownProjects: "12",
     rated: "100%",
     projects: "300+",
     experience: "6+",
@@ -331,56 +331,63 @@ export const content = {
         },
         {
           id: "hidden",
-        },],
-        [{
-            id: 3,
-            title: "Graphql",
-            description:
-              "is a markup language used for structuring and presenting content on the World Wide Web",
-            direction: "right",
-            img: "graphql.svg",
-          },{
-            id: 4,
-            title: "Ios",
-            description:
-              "is a markup language used for structuring and presenting content on the World Wide Web",
-            direction: "right",
-            img: "ios.svg",
-          },{
-            id: 5,
-            title: "Html5",
-            description:
-              "is a markup language used for structuring and presenting content on the World Wide Web",
-            direction: "right",
-            img: "html5.svg",
-          },{
-            id: "hidden",
-          }],[
-            {
-              id: 6,
-              title: "Csharp",
-              description:
-                "is a markup language used for structuring and presenting content on the World Wide Web",
-              direction: "right",
-              img: "csharp.svg",
-            },
-            {
-              id: 7,
-              title: "Express",
-              description:
-                "is a markup language used for structuring and presenting content on the World Wide Web",
-              direction: "left",
-              img: "express.svg",
-            },
-            {
-              id: 8,
-              title: "Nodedotjs",
-              description:
-                "is a markup language used for structuring and presenting content on the World Wide Web",
-              direction: "left",
-              img: "nodedotjs.svg",
-            },
-          ],
+        },
+      ],
+      [
+        {
+          id: 3,
+          title: "Graphql",
+          description:
+            "is a markup language used for structuring and presenting content on the World Wide Web",
+          direction: "right",
+          img: "graphql.svg",
+        },
+        {
+          id: 4,
+          title: "Ios",
+          description:
+            "is a markup language used for structuring and presenting content on the World Wide Web",
+          direction: "right",
+          img: "ios.svg",
+        },
+        {
+          id: 5,
+          title: "Html5",
+          description:
+            "is a markup language used for structuring and presenting content on the World Wide Web",
+          direction: "right",
+          img: "html5.svg",
+        },
+        {
+          id: "hidden",
+        },
+      ],
+      [
+        {
+          id: 6,
+          title: "Csharp",
+          description:
+            "is a markup language used for structuring and presenting content on the World Wide Web",
+          direction: "right",
+          img: "csharp.svg",
+        },
+        {
+          id: 7,
+          title: "Express",
+          description:
+            "is a markup language used for structuring and presenting content on the World Wide Web",
+          direction: "left",
+          img: "express.svg",
+        },
+        {
+          id: 8,
+          title: "Nodedotjs",
+          description:
+            "is a markup language used for structuring and presenting content on the World Wide Web",
+          direction: "left",
+          img: "nodedotjs.svg",
+        },
+      ],
       [
         {
           id: 9,
@@ -408,7 +415,7 @@ export const content = {
         },
         {
           id: "hidden",
-        }
+        },
       ],
       [
         {
@@ -434,7 +441,8 @@ export const content = {
             "is a markup language used for structuring and presenting content on the World Wide Web",
           direction: "right",
           img: "typescript.svg",
-        }],
+        },
+      ],
       [
         {
           id: 15,

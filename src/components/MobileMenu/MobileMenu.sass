@@ -10,29 +10,21 @@
   overflow-y: auto
   &.mobile-menu_inner
     gap: 3rem
-
 .mobile-menu__item
     list-style: none
     & svg
         fill: $light-color
-
 .mobile-menu__link
     display: flex
     color: $light-color
     text-decoration: none
-
 .mobile-menu__logo
     display: inline-flex
-    // position: fixed
-    // z-index: 99
-
 .menu-icon 
-  width: 22px
-  height: 10px
+  width: 2.2rem
+  height: 1rem
   cursor: pointer
   position: relative
-  // position: fixed
-  // z-index: 99
   span
     background-color: $light-color-lighter
     height: 2px
@@ -45,7 +37,7 @@
     &:last-child 
       top: 6px
 .menu-icon-close
-  width: 22px
+  width: 2.2rem
   cursor: pointer
   position: relative
   span
@@ -60,16 +52,15 @@
       transform: rotate(45deg)
     &:last-child 
       transform: rotate(-45deg)
-
 .mobile-menu
   display: flex
   flex-direction: column
   gap: 2rem
   svg
-    padding: 5px
-    width: 32px
-    height: 32px
-    margin-right: 28px
+    padding: 0.5rem
+    width: 3.2rem
+    height: 3.2rem
+    margin-right: 2.8rem
     fill: $light-color
     stroke: $light-color
     opacity: 0.48
@@ -90,13 +81,13 @@
         stroke: rgba($accent-color, 1)
         svg
             background-color: rgba($accent-color, 0.32)
-            border-radius: 8px
+            border-radius: 0.8rem
             fill: $accent-color
             opacity: 1
       .mobile-menu__link:hover::after
         display: none
       p
-        font-size: 18px
+        font-size: 1.8rem
         color: rgba($accent-color, 1)
         opacity: 1
         font-weight: 600
@@ -137,15 +128,14 @@
   align-items: center
   .title
     margin-bottom: unset
-    
 .mobile-menu_cta
   background: #10151D
-  border-radius: 20px
+  border-radius: 2rem
   padding: 1.6rem 0.6rem
   text-align: center
   p
     font-size: 1.6rem
-    margin-bottom: 8px
+    margin-bottom: 0.8rem
     color: $light-color-lighter
   a
     color: $accent-color
@@ -156,40 +146,36 @@
   width: 100%
   justify-content: space-between
   align-items: center
-  margin-bottom: 35px
+  margin-bottom: 3.5rem
   .title
     margin-bottom: 0
 
-
-
 @media screen and (max-width: 992px)
     .mobile-menu__logo
-        top: 70px
-        left: 30px
+        top: 7rem
+        left: 3rem
     .mobile-menu
-        padding: 0 30px
-        padding-top: 65px
-        padding-bottom: 32px
-
+        padding: 0 3rem
+        padding-top: 6.5rem
+        padding-bottom: 3.2rem
 @media screen and (max-width: 768px)
     .mobile-menu__logo
-      left: 20px
+      left: 2rem
     .menu-icon-close
-      width: 20px
+      width: 2rem
     .mobile-menu
-      padding: 0 20px
-      padding-top: 65px
-      padding-bottom: 32px
-
+      padding: 0 2rem
+      padding-top: 6.5rem
+      padding-bottom: 3.2rem
 @media screen and (max-width: 576px)
     .mobile-menu__logo
-      left: 15px
+      left: 1.5rem
     .mobile-menu
-      padding: 0 15px
-      padding-top: 65px
-      padding-bottom: 32px
+      padding: 0 1.5rem
+      padding-top: 6.5rem
+      padding-bottom: 3.2rem
     .mobile-menu__logo-img_inner, .mobile-menu__logo-img
-      max-width: 34px
-      max-height: 34px
+      max-width: 3.4rem
+      max-height: 3.4rem
     .menu-icon-close
-      width: 18px
+      width: 1.8rem

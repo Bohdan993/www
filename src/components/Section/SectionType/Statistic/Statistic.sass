@@ -12,7 +12,6 @@
   &__common-figures
     display: flex
     gap: 2.2vw
-
   &__world, &__chart, &__upwork, &__own-projects, &__diagram
     width: 100%
     height: 100%
@@ -101,7 +100,6 @@
   &__svg-diagram-mobile
     display: none
 
-
 @media screen and (max-width: 992px)
   .statistic__number
     font-size: 4.6rem
@@ -111,13 +109,27 @@
   .statistic__upwork, .statistic__own-projects
     height: auto
   .statistic__text-content-box
-    margin-bottom: 11px
-
+    margin-bottom: 1.1rem
 @media screen and (max-width: 768px)
+  .statistic__chart
+    margin-top: 0
+    padding: 1.4rem 1.4rem 2rem 2.3rem
+    gap: 0.4rem
+    figure:first-child
+      width: 47.5%
+      figcaption
+        display: flex
+        flex-direction: column
+        padding-bottom: 1.2rem
+    .statistic__text-content
+      width: 100% - 47.5%
   .statistic__number
     font-size: 3.6rem
   .statistic
     flex-wrap: wrap
+  .statistic__svg-chart
+    width: 100%
+    padding-right: 4rem
   .statistic__first-column, .statistic__second-column
     width: 100%
   .statistic__common-figures
@@ -126,16 +138,16 @@
     font-size: 1.4rem
     line-height: 1.25
     text-transform: uppercase!important
-    max-width: 125px
+    max-width: 12.5rem
   .statistic, .statistic__first-column, .statistic__second-column
     gap: 2.4rem
   .statistic__common-figures
     gap: 1.6rem
-
-
+  .statistic__diagram
+    margin-top: 0 
 @media screen and (max-width: 576px)
   .statistic__world
-    padding: 13px 23px
+    padding: 1.3rem 2.3rem
   .statistic__svg-upwork
     width: 2.8rem
     height: 3.4rem
@@ -145,4 +157,3 @@
     display: none
   .statistic__svg-diagram-mobile
     display: block
-  
